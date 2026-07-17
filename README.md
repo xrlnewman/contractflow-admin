@@ -1,6 +1,6 @@
 # ContractFlow Admin
 
-ContractFlow 是免费开源的合同全生命周期后台与 Go Gin API，覆盖合同起草、审核、用印、电子签署、归档和到期续签。每次写操作都会记录状态事件与审计日志，重复提交使用 `Idempotency-Key` 安全重试。
+ContractFlow 是合同全生命周期后台与 Go Gin API，覆盖合同起草、审核、用印、电子签署、归档和到期续签。每次写操作都会记录状态事件与审计日志，重复提交使用 `Idempotency-Key` 安全重试。
 
 ## 关联仓库
 
@@ -18,7 +18,7 @@ cd web && npm install && npm test && npm run build
 
 ## API 摘要
 
-所有接口返回 `{ code, message, data, traceId }`，写接口支持 `Idempotency-Key`。闭环：合同起草 → 法务审核 → 审批用印 → 双方签署 → 自动归档 → 到期提醒与续签。
+所有接口返回 `{ code, message, data, traceId }`，写接口支持 `Idempotency-Key`。合同状态依次为：合同起草 → 法务审核 → 审批用印 → 双方签署 → 自动归档 → 到期提醒与续签。
 
 | Method | URL | 用途 |
 | --- | --- | --- |
